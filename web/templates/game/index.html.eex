@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <%= for {name, status, image} <- get_streams(@game_name) do %>
+      
+      <a href="<%= game_path(@conn, :index, @game_name) %>/<%= name %>" >
+	<h4><%= humanize(name) %></h4>
+	<img src=<%= image %> >
+      </a>
+      <% end %>
+</div>

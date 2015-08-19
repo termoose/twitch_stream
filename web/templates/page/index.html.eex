@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h2>Top streams</h2>
+  <%= for {name, picture} <- top_games do %>
+      <h3><%= humanize(name) %></h3>
+      <a href="/<%= encode_url(name) %>" >
+	<img src=<%= picture %> >
+      </a>
+      <% end %>
+      
+</div>
+
+

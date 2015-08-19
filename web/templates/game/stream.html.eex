@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  Streamer name: <%= @streamer_name %>
+
+  M3u8: <%= get_playlist(@streamer_name) %>
+  
+  <div id="player"></div>
+  <script>
+    var player = new Clappr.Player({source: "http://your.video/here.mp4", parentId: "#player"});
+  </script>
+
+</div>
