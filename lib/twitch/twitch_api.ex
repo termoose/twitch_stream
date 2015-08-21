@@ -11,6 +11,10 @@ defmodule TwitchStream.TwitchApi do
 		|> Enum.map(fn({k, v}) -> {String.to_atom(k), v} end)
 	end
 
+	def get_stream_info(channel) do
+		get!("/streams/" <> channel)
+	end
+	
 	def get_top_games do		
 		get!("/games/top").body[:top]
 	end

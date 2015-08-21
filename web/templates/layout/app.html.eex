@@ -9,7 +9,8 @@
 
     <title>Twitch Streams</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <script type="text/javascript" src="http://cdn.clappr.io/latest/clappr.min.js"></script>
+    <script src="//vjs.zencdn.net/4.1/video.js"></script>
+    <link href="//vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
   </head>
 
   <body>

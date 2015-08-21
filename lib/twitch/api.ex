@@ -6,7 +6,7 @@ defmodule TwitchStream.Api do
 	end
 
 	def get_stream_playlist(channel) do
-		GenServer.call(__MODULE__, {:stream_url, channel}, 15000)
+		GenServer.call(__MODULE__, {:stream_url, channel})
 	end
 
 	def get_top_games do
@@ -47,6 +47,7 @@ defmodule TwitchStream.Api do
 	def handle_call({:token, channel}, _from, response) do
 		case ExRated.check_rate("twitch_token_" <> channel, 60_000, 1) do
 			{:ok, _n} ->
+				IO.puts "Generating token!"
 				api_response = TwitchStream.TokenApi.get_token(channel)
 				{:reply, api_response, api_response}
 
@@ -56,7 +57,7 @@ defmodule TwitchStream.Api do
 	end
 
 	def handle_call({:stream_url, channel}, _from, response) do
-		case ExRated.check_rate("twitch_stream_" <> channel, 60_000, 1) do
+		case ExRated.check_rate("twitch_stream_" <> channel, 1_000, 1) do
 			{:ok, _n} ->
 				IO.puts "Calling api for channel #{channel} ..."
 				api_response = TwitchStream.StreamApi.get_stream_url(channel)

@@ -34,6 +34,6 @@ defmodule TwitchStream.Endpoint do
     store: :cookie,
     key: "_twitch_stream_key",
     signing_salt: "G7rWZjJN"
-
+		
   plug TwitchStream.Router
 end

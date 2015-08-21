@@ -1,11 +1,23 @@
 <div class="jumbotron">
   Streamer name: <%= @streamer_name %>
 
-  M3u8: <%= get_playlist(@streamer_name) %>
+  M3u8: <%= get_playlist(@streamer_name) %> <br>
+
+  <div style="width:700px;margin:0px auto;">
+    <video id="example_video_1" class="video-js vjs-default-skin"
+	   controls preload="auto" width="640" height="264"
+	   data-setup='{"controls":true}'>
+      <source src="<%= get_playlist(@streamer_name) %>" type='video/mp4' />
+    </video>
+        </div>
   
-  <div id="player"></div>
+  <!-- video autoplay="autoplay" controls="controls">
+    <source src="<%= get_playlist(@streamer_name) %>" type="video/mp4"/>
+  </video -->
+  
+  <!-- div id="player"></div>
   <script>
-    var player = new Clappr.Player({source: "http://your.video/here.mp4", parentId: "#player"});
-  </script>
+    var player = new Clappr.Player({source: "<%= get_playlist(@streamer_name) %>", parentId: "#player"});
+  </script-->
 
 </div>

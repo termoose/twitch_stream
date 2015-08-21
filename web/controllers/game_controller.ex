@@ -8,5 +8,4 @@ defmodule TwitchStream.GameController do
 	def index(conn, %{"game" => game}) do
 		render conn, "index.html", game_name: game
 	end
-
 end
