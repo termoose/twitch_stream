@@ -10,6 +10,7 @@ defmodule TwitchStream.Router do
   end
 
   pipeline :api do
+		plug Corsica
     plug :accepts, ["json"]
   end
 

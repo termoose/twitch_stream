@@ -3,13 +3,17 @@
 
   M3u8: <%= get_playlist(@streamer_name) %> <br>
 
-  <div style="width:700px;margin:0px auto;">
+  <!-- div style="width:700px;margin:0px auto;">
     <video id="example_video_1" class="video-js vjs-default-skin"
 	   controls preload="auto" width="640" height="264"
 	   data-setup='{"controls":true}'>
       <source src="<%= get_playlist(@streamer_name) %>" type='video/mp4' />
     </video>
-        </div>
+</div-->
+
+  <video class="video-js vjs-default-skin" data-viblast-key="N8FjNTQ3NDdhZqZhNGI5NWU5ZTI=" width="640" data-viblast-he-aac="true" controls preload="auto" data-setup='{"techOrder": ["html5", "viblastflash"]}'>
+    <source src="<%= get_playlist(@streamer_name) %>" type="application/x-mpegURL"/>
+  </video>
   
   <!-- video autoplay="autoplay" controls="controls">
     <source src="<%= get_playlist(@streamer_name) %>" type="video/mp4"/>

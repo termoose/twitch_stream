@@ -36,6 +36,9 @@ defmodule TwitchStream.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"},
 		 {:httpoison, "~> 0.7.2"},
-		 {:ex_rated, "~> 0.0.6"}]
+		 {:ex_rated, "~> 0.0.6"},
+		 {:plug, "~> 1.0"},
+		 {:corsica, "~> 0.2"}
+		]
   end
 end

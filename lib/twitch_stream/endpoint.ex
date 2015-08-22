@@ -1,6 +1,8 @@
 defmodule TwitchStream.Endpoint do
   use Phoenix.Endpoint, otp_app: :twitch_stream
 
+	plug Corsica, origins: "*"
+	
   socket "/socket", TwitchStream.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.

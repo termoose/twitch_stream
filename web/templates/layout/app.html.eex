@@ -9,8 +9,9 @@
 
     <title>Twitch Streams</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <script src="//vjs.zencdn.net/4.1/video.js"></script>
+    <script src="//vjs.zencdn.net/4.12/video.js"></script>
     <link href="//vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
+    <script src="https://viblast.com/player/free-version/sdqsdx86/viblast.js"></script>
   </head>
 
   <body>

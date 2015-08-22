@@ -23,12 +23,13 @@ defmodule TwitchStream.Api do
 
 	# Server callbacks
 	def handle_call(:top_games, _from, response) do
-		case ExRated.check_rate("twitch_top_games", 10_000, 1) do
+		case ExRated.check_rate("twitch_top_games", 60_000, 1) do
 			{:ok, _n} ->
 				api_response = TwitchStream.TwitchApi.get_top_games
 				{:reply, api_response, api_response}
 																														
 			{:fail, _n} ->
+				IO.puts "Using cached top Twitch games"
 				{:reply, response, response}
 		end
 	end
@@ -40,6 +41,7 @@ defmodule TwitchStream.Api do
 				{:reply, api_response, api_response}
 
 			{:fail, _n} ->
+				IO.puts "Using cached stream names"
 				{:reply, response, response}
 		end
 	end
@@ -47,24 +49,23 @@ defmodule TwitchStream.Api do
 	def handle_call({:token, channel}, _from, response) do
 		case ExRated.check_rate("twitch_token_" <> channel, 60_000, 1) do
 			{:ok, _n} ->
-				IO.puts "Generating token!"
 				api_response = TwitchStream.TokenApi.get_token(channel)
 				{:reply, api_response, api_response}
 
 			{:fail, _n} ->
+				IO.puts "Using cached token"
 				{:reply, response, response}
 		end
 	end
 
 	def handle_call({:stream_url, channel}, _from, response) do
-		case ExRated.check_rate("twitch_stream_" <> channel, 1_000, 1) do
+		case ExRated.check_rate("twitch_stream_" <> channel, 60_000, 1) do
 			{:ok, _n} ->
-				IO.puts "Calling api for channel #{channel} ..."
 				api_response = TwitchStream.StreamApi.get_stream_url(channel)
-				IO.puts "response: #{response}"
 				{:reply, api_response, api_response}
 
 			{:fail, _n} ->
+				IO.puts "Using cached stream URL"
 				{:reply, response, response}
 		end
 	end
