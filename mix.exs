@@ -37,8 +37,7 @@ defmodule TwitchStream.Mixfile do
      {:cowboy, "~> 1.0"},
 		 {:httpoison, "~> 0.7.2"},
 		 {:ex_rated, "~> 0.0.6"},
-		 {:plug, "~> 1.0"},
-		 {:corsica, "~> 0.2"}
+		 {:plug, "~> 1.0"}
 		]
   end
 end

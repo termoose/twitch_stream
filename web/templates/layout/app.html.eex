@@ -12,6 +12,18 @@
     <script src="//vjs.zencdn.net/4.12/video.js"></script>
     <link href="//vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
     <script src="https://viblast.com/player/free-version/sdqsdx86/viblast.js"></script>
+    <!-- script type="text/javascript" src="//bitdash-a.akamaihd.net/bitmovin-portal/55e2c30a6b76b/82d39a0c11/latest/bitdash.min.js"></script -->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-59323380-2', 'auto');
+      ga('send', 'pageview');
+
+      </script>
   </head>
 
   <body>

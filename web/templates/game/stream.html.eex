@@ -11,7 +11,18 @@
     </video>
 </div-->
 
-  <video class="video-js vjs-default-skin" data-viblast-key="N8FjNTQ3NDdhZqZhNGI5NWU5ZTI=" width="640" data-viblast-he-aac="true" controls preload="auto" data-setup='{"techOrder": ["html5", "viblastflash"]}'>
+  <!-- div id="player"></div>
+  <script type="text/javascript">
+    var conf = {
+    key: "3d0a76da1a29ad5e9332e5d6191397b2",
+    source:    {
+    hls: "<%= get_playlist(@streamer_name) %>"
+    }
+    };
+    bitdash("player").setup(conf);
+  </script -->
+  
+  <video class="video-js vjs-default-skin" data-viblast-key="N8FjNTQ3NDdhZqZhNGI5NWU5ZTI=" width="640" height="480" data-viblast-he-aac="true" controls preload="auto" data-setup='{"techOrder": ["html5", "viblastflash"]}'>
     <source src="<%= get_playlist(@streamer_name) %>" type="application/x-mpegURL"/>
   </video>
   
